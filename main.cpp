@@ -16,9 +16,9 @@ void producer(MainWindow& w, int id)
         queueLock.lock();
         ++taskCount;
         w.pushTask(taskCount);
-        queueLock.unlock();
         w.updateText(id, taskCount);
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        queueLock.unlock();
+        std::this_thread::sleep_for(std::chrono::milliseconds(600));
     }
 }
 
@@ -28,12 +28,12 @@ void consumer(MainWindow& w, int id)
     {
         queueLock.lock();
         int res = w.popTask();
-        queueLock.unlock();
         if (res != -1)
         {
             w.updateText(id + 1, res);
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
         }
+        queueLock.unlock();
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 }
 
