@@ -4,6 +4,7 @@
 #include <thread>
 #include <functional>
 #include <chrono>
+#include <QTimer>
 
 extern int taskCount;
 extern std::recursive_mutex queueLock;
@@ -26,11 +27,13 @@ MainWindow::MainWindow(QWidget *parent)
             queueLock.lock();
             ui->start_button->setText("继续");
         }
-
+        ui->start_button->setEnabled(false);
+        QTimer::singleShot(800, this, [this]{
+            ui->start_button->setEnabled(true);
+        });
     });
-    QObject::connect(ui->stop_button, static_cast<void (QPushButton::*)(bool)>(&QPushButton::clicked), this, [=](bool check){
+    QObject::connect(ui->stop_button, static_cast<void (QPushButton::*)(bool)>(&QPushButton::clicked), this, [this]{
         queueLock.lock();
-        std::this_thread::sleep_for(std::chrono::milliseconds(600));
         ui->pro1_text->clear();
         ui->con1_text->clear();
         ui->con2_text->clear();
@@ -42,8 +45,9 @@ MainWindow::MainWindow(QWidget *parent)
         taskCount = 0;
         queueLock.unlock();
         ui->stop_button->setEnabled(false);
-        std::this_thread::sleep_for(std::chrono::milliseconds(600));
-        ui->stop_button->setEnabled(true);
+        QTimer::singleShot(800, this, [this]{
+            ui->stop_button->setEnabled(true);
+        });
     });
 }
 
