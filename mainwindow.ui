@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1220</width>
     <height>600</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <widget class="QLabel" name="pro_1">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>20</x>
       <y>30</y>
       <width>61</width>
       <height>21</height>
@@ -36,7 +36,7 @@
    <widget class="QLabel" name="con_1">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>320</x>
       <y>30</y>
       <width>90</width>
       <height>20</height>
@@ -55,7 +55,7 @@
    <widget class="QLabel" name="con_2">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>30</y>
       <width>91</width>
       <height>21</height>
@@ -74,7 +74,7 @@
    <widget class="QLabel" name="con_3">
     <property name="geometry">
      <rect>
-      <x>900</x>
+      <x>920</x>
       <y>30</y>
       <width>91</width>
       <height>21</height>
@@ -93,7 +93,7 @@
    <widget class="QTextBrowser" name="pro1_text">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>20</x>
       <y>70</y>
       <width>280</width>
       <height>450</height>
@@ -103,7 +103,7 @@
    <widget class="QTextBrowser" name="con1_text">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>320</x>
       <y>70</y>
       <width>280</width>
       <height>450</height>
@@ -113,7 +113,7 @@
    <widget class="QTextBrowser" name="con2_text">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>70</y>
       <width>280</width>
       <height>450</height>
@@ -123,7 +123,7 @@
    <widget class="QTextBrowser" name="con3_text">
     <property name="geometry">
      <rect>
-      <x>900</x>
+      <x>920</x>
       <y>70</y>
       <width>280</width>
       <height>450</height>
@@ -133,7 +133,7 @@
    <widget class="QPushButton" name="start_button">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>30</x>
       <y>530</y>
       <width>84</width>
       <height>24</height>
@@ -149,14 +149,14 @@
    <widget class="QPushButton" name="stop_button">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>130</x>
       <y>530</y>
-      <width>141</width>
+      <width>81</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>停止（清空队列）</string>
+     <string>清空队列</string>
     </property>
     <property name="checkable">
      <bool>false</bool>
@@ -168,7 +168,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
+     <width>1220</width>
      <height>25</height>
     </rect>
    </property>
